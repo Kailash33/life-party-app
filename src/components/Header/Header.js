@@ -1,26 +1,28 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
     const navigations = [
         { id: 1, name: "Home", link: "/" },
         { id: 2, name: "Tours", link: "/" },
         { id: 3, name: "About", link: "/" },
-        { id: 4, name: "Contact", link: "#contact" }
+        { id: 4, name: "Contact", link: "/" }
     ]
 
     return (
         <header>
             <h2>
-                <a href="/">
+                <Link href="/">
                     Life is a party!
-                </a>
+                </Link>
             </h2>
             <nav>
                 {
                     navigations.map(
                         (nav) => (
                             <li key={nav.id}>
-                                <a href={nav.link}>
+                                <Link to={nav.link}>
                                     {nav.name}
-                                </a>
+                                </Link>
                             </li>
                         )
                     )
